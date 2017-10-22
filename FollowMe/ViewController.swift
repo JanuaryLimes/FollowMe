@@ -31,17 +31,15 @@ class ViewController: UIViewController, UIAlertViewDelegate {
     var inputs = [ButtonColor]()
     var indexOfNextButtonToTouch = 0
     var highlightSquareTime = 0.5
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         startNewGame()
     }
@@ -71,19 +69,19 @@ class ViewController: UIViewController, UIAlertViewDelegate {
         let originalColor : UIColor? = button.backgroundColor
         let highlightColor : UIColor = UIColor.white
         
-         UIView.animate(withDuration: highlightTime,
-                        delay: 0.0,
-                        usingSpringWithDamping: 1,
-                        initialSpringVelocity: 1,
-                        options: .curveLinear,
-                        animations: {
-                            button.backgroundColor = highlightColor},
-                        completion: {
-                            finished in
-                            button.backgroundColor = originalColor
-                            let newIndex = index + 1
-                            self.playSequence(index: newIndex, highlightTime: highlightTime)
-         })
+        UIView.animate(withDuration: highlightTime,
+                       delay: 0.0,
+                       usingSpringWithDamping: 1,
+                       initialSpringVelocity: 1,
+                       options: .curveLinear,
+                       animations: {
+                        button.backgroundColor = highlightColor},
+                       completion: {
+                        finished in
+                        button.backgroundColor = originalColor
+                        let newIndex = index + 1
+                        self.playSequence(index: newIndex, highlightTime: highlightTime)
+        })
     }
     
     @IBAction func buttonTouched(sender : UIButton){
@@ -114,20 +112,24 @@ class ViewController: UIViewController, UIAlertViewDelegate {
         }
     }
     
-   
-    
-    func alertView(_ alertView: UIAlertView, clickedButtonAt buttonIndex: Int) {
-        startNewGame()
-    }
-    
     func playerWins(){
-        let winner = UIAlertView(title: "You won!", message: "Congratulations", delegate: self, cancelButtonTitle: nil, otherButtonTitles: "Awesome!")
-        winner.show()
+        let alert = UIAlertController(title: "You won!", message: "Congratulations", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Awesome!", style: .default, handler:
+            { _ in
+                NSLog("User won.")
+                self.startNewGame()
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
     func playerLoses(){
-        let winner = UIAlertView(title: "You lost!", message: "Sorry", delegate: self, cancelButtonTitle: nil, otherButtonTitles: "Try again!")
-        winner.show()
+        let alert = UIAlertController(title: "You lost!", message: "Sorry", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Try again!", style: .default, handler:
+            { _ in
+                self.startNewGame()
+                NSLog("User lost")
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
     func randomButton() -> ButtonColor{
@@ -153,17 +155,4 @@ class ViewController: UIViewController, UIAlertViewDelegate {
         
         return result
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
 }
-
