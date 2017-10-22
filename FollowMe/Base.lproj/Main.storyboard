@@ -5,7 +5,6 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,62 +17,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s0x-sg-jvu">
-                                <rect key="frame" x="39" y="185" width="296" height="296"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s0x-sg-jvu">
+                                <rect key="frame" x="38" y="186" width="296" height="296"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uu3-8C-qyj">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uu3-8C-qyj">
                                         <rect key="frame" x="20" y="20" width="124" height="124"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="124" id="JqN-WF-MVz"/>
-                                            <constraint firstAttribute="height" constant="124" id="xTQ-xY-Chm"/>
-                                        </constraints>
+                                        <connections>
+                                            <action selector="buttonTouchedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="adt-MC-07R"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LN8-Fk-fLv">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LN8-Fk-fLv">
                                         <rect key="frame" x="152" y="20" width="124" height="124"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="buttonTouchedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="q8j-YO-mvF"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yoL-AW-gnj">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yoL-AW-gnj">
                                         <rect key="frame" x="20" y="152" width="124" height="124"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="buttonTouchedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hSb-0P-Woh"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pq4-yK-oyv">
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pq4-yK-oyv">
                                         <rect key="frame" x="152" y="152" width="124" height="124"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="buttonTouchedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rwh-Ja-JSQ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="yoL-AW-gnj" firstAttribute="baseline" secondItem="Pq4-yK-oyv" secondAttribute="baseline" id="0aa-c0-F73"/>
-                                    <constraint firstAttribute="trailing" secondItem="LN8-Fk-fLv" secondAttribute="trailing" constant="20" id="AqX-8V-RpL"/>
-                                    <constraint firstItem="Uu3-8C-qyj" firstAttribute="top" secondItem="LN8-Fk-fLv" secondAttribute="top" id="DN6-bD-0jG"/>
-                                    <constraint firstItem="Pq4-yK-oyv" firstAttribute="leading" secondItem="yoL-AW-gnj" secondAttribute="trailing" constant="8" symbolic="YES" id="Ers-CO-pQW"/>
-                                    <constraint firstItem="Uu3-8C-qyj" firstAttribute="leading" secondItem="s0x-sg-jvu" secondAttribute="leading" constant="20" id="HMc-gA-mOL"/>
-                                    <constraint firstItem="yoL-AW-gnj" firstAttribute="bottom" secondItem="Pq4-yK-oyv" secondAttribute="bottom" id="I6C-25-sa6"/>
-                                    <constraint firstItem="Uu3-8C-qyj" firstAttribute="firstBaseline" secondItem="LN8-Fk-fLv" secondAttribute="firstBaseline" id="IHM-xM-b86"/>
-                                    <constraint firstItem="yoL-AW-gnj" firstAttribute="top" secondItem="Pq4-yK-oyv" secondAttribute="top" id="Mip-3t-FFj"/>
-                                    <constraint firstItem="yoL-AW-gnj" firstAttribute="firstBaseline" secondItem="Pq4-yK-oyv" secondAttribute="firstBaseline" id="NQb-sE-WHc"/>
-                                    <constraint firstItem="yoL-AW-gnj" firstAttribute="top" secondItem="Uu3-8C-qyj" secondAttribute="bottom" constant="8" symbolic="YES" id="T4F-Rq-Flf"/>
-                                    <constraint firstItem="LN8-Fk-fLv" firstAttribute="leading" secondItem="Uu3-8C-qyj" secondAttribute="trailing" constant="8" symbolic="YES" id="at1-Np-uUj"/>
-                                    <constraint firstItem="LN8-Fk-fLv" firstAttribute="leading" secondItem="Pq4-yK-oyv" secondAttribute="leading" id="fH3-OE-PSs"/>
-                                    <constraint firstItem="Uu3-8C-qyj" firstAttribute="leading" secondItem="yoL-AW-gnj" secondAttribute="leading" id="foC-bW-a2g"/>
-                                    <constraint firstItem="Uu3-8C-qyj" firstAttribute="top" secondItem="s0x-sg-jvu" secondAttribute="top" constant="20" id="hff-AF-WMB"/>
-                                    <constraint firstItem="LN8-Fk-fLv" firstAttribute="trailing" secondItem="Pq4-yK-oyv" secondAttribute="trailing" id="j4v-cd-yFX"/>
-                                    <constraint firstItem="Pq4-yK-oyv" firstAttribute="top" secondItem="LN8-Fk-fLv" secondAttribute="bottom" constant="8" symbolic="YES" id="osW-NA-V8o"/>
-                                    <constraint firstAttribute="bottom" secondItem="yoL-AW-gnj" secondAttribute="bottom" constant="20" id="r94-Ib-BF7"/>
-                                    <constraint firstItem="Uu3-8C-qyj" firstAttribute="baseline" secondItem="LN8-Fk-fLv" secondAttribute="baseline" id="ttm-pa-KcY"/>
-                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="s0x-sg-jvu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="39" id="7yA-9o-SBj"/>
-                            <constraint firstItem="s0x-sg-jvu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="165" id="dby-0P-R0b"/>
-                            <constraint firstItem="s0x-sg-jvu" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="dgC-h3-Z6y"/>
-                            <constraint firstItem="s0x-sg-jvu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tKc-mp-4xM"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="blueButton" destination="yoL-AW-gnj" id="K1D-Gp-Psh"/>
+                        <outlet property="greenButton" destination="LN8-Fk-fLv" id="9Sx-xj-zLJ"/>
+                        <outlet property="redButton" destination="Uu3-8C-qyj" id="Ei2-tZ-BjI"/>
+                        <outlet property="yellowButton" destination="Pq4-yK-oyv" id="XMT-uJ-WI2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
