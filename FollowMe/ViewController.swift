@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIAlertViewDelegate {
+class ViewController: UIViewController {
     
     enum ButtonColor : Int {
         case Red = 1
