@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,9 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s0x-sg-jvu">
-                                <rect key="frame" x="38" y="186" width="296" height="296"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s0x-sg-jvu">
+                                <rect key="frame" x="40" y="186" width="296" height="295"/>
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uu3-8C-qyj">
                                         <rect key="frame" x="20" y="20" width="124" height="124"/>
@@ -55,15 +55,33 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="296" id="dAr-zz-N4B"/>
+                                    <constraint firstAttribute="width" constant="296" id="mOv-dA-eWK"/>
+                                </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obE-ej-iNA">
+                                <rect key="frame" x="136.5" y="20" width="102" height="30"/>
+                                <state key="normal" title="Rozpocznij grę"/>
+                                <connections>
+                                    <action selector="startGameTouched:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="nR1-I8-sBh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="s0x-sg-jvu" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="4kW-R2-E3C"/>
+                            <constraint firstItem="s0x-sg-jvu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9Yp-nK-7SB"/>
+                            <constraint firstItem="obE-ej-iNA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zqr-fZ-cRT"/>
+                            <constraint firstItem="obE-ej-iNA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="cb8-9F-qQ1"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="blueButton" destination="yoL-AW-gnj" id="K1D-Gp-Psh"/>
                         <outlet property="greenButton" destination="LN8-Fk-fLv" id="9Sx-xj-zLJ"/>
                         <outlet property="redButton" destination="Uu3-8C-qyj" id="Ei2-tZ-BjI"/>
+                        <outlet property="startGameButton" destination="obE-ej-iNA" id="IJR-X2-Txd"/>
                         <outlet property="yellowButton" destination="Pq4-yK-oyv" id="XMT-uJ-WI2"/>
                     </connections>
                 </viewController>
