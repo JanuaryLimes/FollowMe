@@ -21,6 +21,12 @@ class ViewController: UIViewController {
         case Human, Computer
     }
     
+    @IBAction func startGameTouched(_ sender: Any) {
+        startNewGame()
+        startGameButton.isHidden = true
+    }
+    
+    @IBOutlet weak var startGameButton: UIButton!
     @IBOutlet weak var redButton : UIButton!
     @IBOutlet weak var greenButton : UIButton!
     @IBOutlet weak var blueButton : UIButton!
@@ -41,7 +47,6 @@ class ViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        startNewGame()
     }
     
     func buttonByColor(color : ButtonColor) -> UIButton{
@@ -117,7 +122,7 @@ class ViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Awesome!", style: .default, handler:
             { _ in
                 NSLog("User won.")
-                self.startNewGame()
+                self.startGameButton.isHidden = false
         }))
         self.present(alert, animated: true, completion: nil)
     }
@@ -126,7 +131,7 @@ class ViewController: UIViewController {
         let alert = UIAlertController(title: "You lost!", message: "Sorry", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Try again!", style: .default, handler:
             { _ in
-                self.startNewGame()
+                self.startGameButton.isHidden = false
                 NSLog("User lost")
         }))
         self.present(alert, animated: true, completion: nil)
